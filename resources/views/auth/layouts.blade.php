@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel 10 Custom User Registration & Login Tutorial - AllPHPTricks.com</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('lightbox2-dev/dist/css/lightbox.min.css')
+}}">
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -25,6 +27,7 @@
                         <a class="text-gray-700 hover:text-blue-500" href="{{ route('register') }}">Register</a>
                     </li>
                     @else
+                    
                     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -42,6 +45,10 @@
         </ul>
     </li>
 @endguest
+        <li class="nav-item">
+        <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{
+        route('gallery.index') }}">Gallery</a>
+        </li>
                 </ul>
             </div>
             <button class="lg:hidden navbar-toggler focus:outline-none">
@@ -58,6 +65,8 @@
     <div class="container mx-auto p-4">
         @yield('content')
     </div>
+
+   
 
 </body>
 
