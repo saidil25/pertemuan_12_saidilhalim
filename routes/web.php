@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\GalleryController;
 
 
+
 Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/dashboard', [LoginRegisterController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
@@ -18,3 +19,7 @@ Route::controller(LoginRegisterController::class)->group(function () {
 });
 
 Route::resource('gallery', GalleryController::class);
+
+Route::get('/api/gallery', [GalleryController::class, 'getApiGallery'])->name('api.gallery');
+
+

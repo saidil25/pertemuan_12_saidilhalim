@@ -6,6 +6,20 @@ use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
+     /**
+     * @OA\Get(
+     *     path="/api/gallery",
+     *     tags={"gallery"},
+     *     summary="Mengambil data gallery untuk API",
+     *     description="Endpoint untuk mendapatkan data gallery dalam format JSON",
+     *     @OA\Response(response="200", description="Sukses"),
+     * )
+     */
+    public function getApiGallery()
+    {
+        $galleries = Post::where('picture', '!=', '')->whereNotNull('picture')->orderBy('created_at', 'desc')->paginate(30);
+        return response()->json($galleries, 200);
+    }
     /**
      * Display a listing of the resource.
      */

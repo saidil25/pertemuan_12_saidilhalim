@@ -1,0 +1,33 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Contoh API documentation",
+        "description": "Contoh API doc menggunakan OpenAPI/Swagger",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "choirudin.emchagmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/api/gallery": {
+            "get": {
+                "tags": [
+                    "gallery"
+                ],
+                "summary": "Mengambil data gallery untuk API",
+                "description": "Endpoint untuk mendapatkan data gallery dalam format JSON",
+                "operationId": "940ae3aca23a93a89c44df073a5638e7",
+                "responses": {
+                    "200": {
+                        "description": "Sukses"
+                    }
+                }
+            }
+        }
+    }
+}
